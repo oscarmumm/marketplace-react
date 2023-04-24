@@ -4,6 +4,7 @@ import NotFound from "../views/NotFound";
 import Home from "../views/Home";
 import ShoppingCart from "../views/ShoppingCart";
 import Categories from "../views/Categories";
+import Category from "../views/Category";
 
 export const router = createBrowserRouter([
   {
@@ -21,8 +22,12 @@ export const router = createBrowserRouter([
       },
       {
         path: '/categories',
-        element: <Categories />
-      }
+        element: <Categories />,
+      },
+      {
+        path: '/category/:id',
+        element: <Category />,
+      },
     ]  
   }
 ])
