@@ -1,0 +1,22 @@
+.product-card {
+  height: 400px;
+  width: 250px;
+  margin: 1.5rem auto;
+  box-shadow: 0 0 5px #999;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.product-card-uppersection {
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+.product-card-lowersection {
+  height: 200px;
+}
+
+.product-card-img {
+  max-height: 200px;
+  width: 100%;
+}

@@ -10,13 +10,13 @@ const Category = () => {
     const {data} = useFetch(
         `https://dummyjson.com/products/category/${params.id}`
     );
-    console.log(data);
 
 
     return (
       <ul className="container-fluid d-flex flex-wrap">
         {data?.products.map((el) => (
           <ProductCard
+            key={el.id}
             title={el.title}
             price={el.price}
             thumbnail={el.thumbnail}
