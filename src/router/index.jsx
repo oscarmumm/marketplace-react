@@ -5,6 +5,8 @@ import Home from "../views/Home";
 import ShoppingCart from "../views/ShoppingCart";
 import Categories from "../views/Categories";
 import Category from "../views/Category";
+import Login from "../views/Login";
+import Signup from "../views/Signup";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ export const router = createBrowserRouter([
       {
         path: '/categories',
         element: <Categories />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
+      },
+      {
+        path: '/signup',
+        element: <Signup />,
       },
       {
         path: '/category/:id',

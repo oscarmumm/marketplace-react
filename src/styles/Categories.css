@@ -1,3 +1,13 @@
-.category-name-card {
+.category-card {
   border-radius: 10px;
+  box-shadow: 0 0 5px #999;
+  list-style: none;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.category-card-link {
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 500;
 }

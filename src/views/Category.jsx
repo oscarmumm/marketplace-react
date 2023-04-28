@@ -21,6 +21,7 @@ const Category = () => {
             price={el.price}
             thumbnail={el.thumbnail}
             rating={el.rating}
+            discountPercentage={el.discountPercentage}
           />
         ))}
       </ul>

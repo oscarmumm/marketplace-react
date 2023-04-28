@@ -1,16 +1,16 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar'
-import '../styles/ColorPallete.css'
+import Footer from '../components/Footer'
 
 const LayoutPublic = () => {
   return (
     <div>
       <Navbar />
-      <main>
+      <main className='container-fluid'>
         <Outlet />
       </main>
-      <footer>footer</footer>
+      <Footer />
     </div>
   )
 }
