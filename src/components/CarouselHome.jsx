@@ -1,7 +1,7 @@
 import React from "react";
-import blackfriday_banner from '../assets/img/banners/blackfriday_banner.png'
-import tools_banner from '../assets/img/banners/tools_banner.png'
-import running_banner from '../assets/img/banners/running_banner.png'
+import blackfriday_banner from '../assets/img/banners/blackfriday_banner.webp'
+import tools_banner from '../assets/img/banners/tools_banner.webp'
+import running_banner from '../assets/img/banners/running_banner.webp'
 
 const CarouselHome = () => {
     return (

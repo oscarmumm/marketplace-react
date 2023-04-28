@@ -31,7 +31,7 @@
 }
 
 .product-card-price {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -45,4 +45,8 @@
 
 .product-card-discount-percentage {
   font-style: italic;
+  font-weight: bold;
+  color: #9ECE6A;
+  text-shadow: 1px 1px 0 #000;
+  font-size: 1.5rem;
 }

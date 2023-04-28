@@ -1,36 +1,48 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import CarouselHome from "../components/CarouselHome";
-import { useFetch } from "../hooks/useFetch";
-
+import ProductCard from "../components/ProductCard";
+import CircleLoader from "../components/CircleLoader";
 
 const Home = () => {
-
-    const [offers, setOffers] = useState([])
+    const [offers, setOffers] = useState([]);
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch('https://dummyjson.com/products?limit=100')
+        fetch("https://dummyjson.com/products?limit=100")
             .then((response) => response.json())
-            .then((data) => sortProducts(data.products))
-            function sortProducts(products) {
-                products.sort((a, b) => {
-                    if(a.discountPercentage < b.discountPercentage) {
-                        return 1;
-                    }
-                    if(a.discountPercentage > b.discountPercentage) {
-                        return -1;
-                    }
-                    return 0;
-                })
-                for(let i = 0; i < 10; i++) {
-                    console.log(products[i])
+            .then((data) => sortProducts(data.products));
+        // funcion ordenadora
+        function sortProducts(products) {
+            products.sort((a, b) => {
+                if (a.discountPercentage < b.discountPercentage) {
+                    return 1;
                 }
-            }
-    }, [])
+                if (a.discountPercentage > b.discountPercentage) {
+                    return -1;
+                }
+                return 0;
+            });
+            setOffers(products.slice(0, 10))
+            setLoading(false)
+        }
+    }, []);
 
     return (
         <div className="d-flex flex-column align-items-center">
             <CarouselHome />
-            <h2>Inicio</h2>
+            <h2 className="my-5"> Today's deals</h2>
+            <ul className="container-fluid d-flex flex-wrap">
+                {loading ? <CircleLoader /> : offers.map((el) => (
+                    <ProductCard
+                        key={el.id}
+                        title={el.title}
+                        price={el.price}
+                        thumbnail={el.thumbnail}
+                        rating={el.rating}
+                        discountPercentage={el.discountPercentage}
+                    />
+                ))}
+            </ul>
         </div>
     );
 };

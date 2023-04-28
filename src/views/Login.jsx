@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 const Login = () => {
     return (
-        <div className="container-fluid login-card my-5">
-            <form className="col-lg-2 col-sm-6 mx-auto">
+        <div className="container-fluid login-card py-5 col-lg-2 col-sm-6">
+            <form className="mx-auto">
                 <legend className="text-center">Log In</legend>
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">
