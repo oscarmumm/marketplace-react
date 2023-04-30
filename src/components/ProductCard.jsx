@@ -1,7 +1,20 @@
 import React from 'react'
 import '../styles/ProductCard.css'
+import { useState } from 'react'
+import CartContext from '../contexts/CartContext'
+import { useContext } from 'react'
 
 const ProductCard = (props) => {
+
+  const cart = useContext(CartContext)
+
+  const handleClick = (e) => {
+    // console.log('id del producto:' + props.id)
+    cart.push(props)
+    // console.dir('carrito:')
+    // console.log(cart)
+  }
+
   return (
     <div className='product-card'>
       <div className='product-card-uppersection'>
@@ -12,7 +25,7 @@ const ProductCard = (props) => {
         <span className='product-card-discount-percentage'>{Math.round(props.discountPercentage)}% OFF</span>
         <span className='product-card-price'>${props.price}</span>
         <span className='product-card-rating'>{props.rating} ⭐</span>
-        <a className='product-card-addbtn btn btn-primary' href="#">ADD TO CART</a>
+        <button className='product-card-addbtn btn btn-primary' onClick={handleClick}>ADD TO CART</button>
       </div>
     </div>
   )
