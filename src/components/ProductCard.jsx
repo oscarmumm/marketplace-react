@@ -1,18 +1,15 @@
 import React from 'react'
 import '../styles/ProductCard.css'
-import { useState } from 'react'
-import CartContext from '../contexts/CartContext'
 import { useContext } from 'react'
+import { CartContext } from '../contexts/CartContext'
 
 const ProductCard = (props) => {
 
-  const cart = useContext(CartContext)
+  const { cart, setCart } = useContext(CartContext)
 
-  const handleClick = (e) => {
-    // console.log('id del producto:' + props.id)
-    cart.push(props)
-    // console.dir('carrito:')
-    // console.log(cart)
+  const handleClick = () => {
+    console.log('id del producto:' + props.id)
+    setCart([...cart, props])
   }
 
   return (

@@ -2,14 +2,12 @@ import React from "react";
 import {Outlet} from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import {useState} from "react";
-import CartContext from "../contexts/CartContext";
+import { CartContextProvider } from "../contexts/CartContext";
 
 const LayoutPublic = () => {
-    const [cart, setCart] = useState([]);
 
     return (
-        <CartContext.Provider value={cart}>
+        <CartContextProvider>
             <div>
                 <Navbar />
                 <main
@@ -19,7 +17,7 @@ const LayoutPublic = () => {
                 </main>
                 <Footer />
             </div>
-        </CartContext.Provider>
+        </CartContextProvider>
     );
 };
 
