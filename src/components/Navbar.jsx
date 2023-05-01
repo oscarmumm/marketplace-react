@@ -1,23 +1,19 @@
 import React, {useState} from "react";
 import {NavLink} from "react-router-dom";
-import {useFetch} from "../hooks/useFetch";
 
 const Navbar = () => {
-    const [searchValue, setSearchValue] = useState("");
+    const [searchValue, setSearchValue] = useState()
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        // const { data } = useFetch(`https://dummyjson.com/products/search?q=laptop`);
-    }
 
     function handleChange(e) {
-        setSearchValue(e.target.value);
+        setSearchValue(e.target.value)
     }
 
+
     return (
-        <nav className="navbar navbar-expand-xl bg-success">
+        <nav className="navbar navbar-expand-xl" style={{backgroundColor: '#FFF159'}}>
             <div className="container-fluid">
-                <NavLink className="navbar-brand  text-white" to="/">
+                <NavLink className="navbar-brand text-black fw-bold" to="/">
                     <i className="bi bi-bag-check" style={{fontSize: "2rem"}} />{" "}
                     Marketplace
                 </NavLink>
@@ -37,7 +33,7 @@ const Navbar = () => {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item mx-sm-3 ">
                             <NavLink
-                                className="nav-link text-white"
+                                className="nav-link text-black"
                                 aria-current="page"
                                 to="/">
                                 <i className="bi bi-house" /> - Home
@@ -45,7 +41,7 @@ const Navbar = () => {
                         </li>
                         <li className="nav-item mx-sm-3">
                             <NavLink
-                                className="nav-link text-white"
+                                className="nav-link text-black"
                                 to="/login">
                                 <i className="bi bi-box-arrow-in-right" /> - Login
                                 / Sign Up
@@ -53,13 +49,13 @@ const Navbar = () => {
                         </li>
                         <li className="nav-item mx-sm-3">
                             <NavLink
-                                className="nav-link text-white"
+                                className="nav-link text-black"
                                 to="/categories">
                                 <i className="bi bi-card-list" /> - Categories
                             </NavLink>
                         </li>
                         <li className="nav-item mx-sm-3">
-                            <NavLink className="nav-link text-white" to="/cart">
+                            <NavLink className="nav-link text-black" to="/cart">
                                 <i className="bi bi-cart" /> - Cart
                             </NavLink>
                         </li>
@@ -67,7 +63,7 @@ const Navbar = () => {
                     <form
                         className="d-flex"
                         role="search"
-                        onSubmit={handleSubmit}>
+                    >
                         <input
                             className="form-control me-2"
                             type="search"
@@ -75,9 +71,9 @@ const Navbar = () => {
                             aria-label="Search"
                             onChange={handleChange}
                         />
-                        <button className="btn btn-outline-light" type="submit">
+                        <NavLink to={`/search/${searchValue}`} className="btn btn-primary">
                             Search
-                        </button>
+                        </NavLink>
                     </form>
                 </div>
             </div>

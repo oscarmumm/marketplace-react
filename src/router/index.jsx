@@ -7,6 +7,7 @@ import Categories from "../views/Categories";
 import Category from "../views/Category";
 import Login from "../views/Login";
 import Signup from "../views/Signup";
+import Search from "../views/Search";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: '/signup',
         element: <Signup />,
+      },
+      {
+        path: '/search/:product',
+        element: <Search />,
       },
       {
         path: '/category/:id',
