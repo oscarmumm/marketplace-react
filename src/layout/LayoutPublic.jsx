@@ -12,7 +12,7 @@ const LayoutPublic = () => {
                 <Navbar />
                 <main
                     className="container-fluid bg-light"
-                    style={{minHeight: "100vh"}}>
+                    style={{minHeight: "90vh"}}>
                     <Outlet />
                 </main>
                 <Footer />

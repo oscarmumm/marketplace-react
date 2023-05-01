@@ -1,19 +1,11 @@
 import React from 'react'
 import '../styles/ProductCard.css'
-import { useContext } from 'react'
-import { CartContext } from '../contexts/CartContext'
+import { NavLink } from 'react-router-dom'
 
 const ProductCard = (props) => {
 
-  const { cart, setCart } = useContext(CartContext)
-
-  const handleClick = () => {
-    console.log('id del producto:' + props.id)
-    setCart([...cart, props])
-  }
-
   return (
-    <div className='product-card'>
+    <NavLink to={`/product/${props.id}`} className='product-card'>
       <div className='product-card-uppersection'>
         <img className='product-card-img' src={props.thumbnail} alt="" />
       </div>
@@ -22,9 +14,8 @@ const ProductCard = (props) => {
         <span className='product-card-discount-percentage'>{Math.round(props.discountPercentage)}% OFF</span>
         <span className='product-card-price'>${props.price}</span>
         <span className='product-card-rating'>{props.rating} ⭐</span>
-        <button className='product-card-addbtn btn btn-primary' onClick={handleClick}>ADD TO CART</button>
       </div>
-    </div>
+    </NavLink>
   )
 }
 
