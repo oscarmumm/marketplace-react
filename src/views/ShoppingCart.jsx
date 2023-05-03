@@ -15,23 +15,31 @@ const ShoppingCart = () => {
 
     return (
         <div className="cart">
-            <h2>Shopping Cart: </h2>
-            <div className="cart-products-container">
-                {cart.map((el, index) => (
-                    <ProductInCart
-                        key={index}
-                        thumbnail={el.thumbnail}
-                        title={el.title}
-                        price={el.price}
-                    />
-                ))}
-            </div>
-            <span className="cart-total">Total: ${total}</span>
-            <button
-                className="clear-cart-btn btn btn-danger"
-                onClick={clearCart}>
-                Clear cart
-            </button>
+            {
+                cart.length >= 1 
+                ?
+                <>
+                    <h2>Shopping Cart: </h2>
+                    <div className="cart-products-container">
+                        {cart.map((el, index) => (
+                            <ProductInCart
+                                key={index}
+                                thumbnail={el.thumbnail}
+                                title={el.title}
+                                price={el.price}
+                            />
+                        ))}
+                    </div>
+                    <span className="cart-total">Total: ${total}</span>
+                    <button
+                        className="clear-cart-btn btn btn-danger"
+                        onClick={clearCart}>
+                        Clear cart
+                    </button>
+                </>
+                :
+                <h2>Shopping cart is empty</h2>
+            }
         </div>
     );
 };

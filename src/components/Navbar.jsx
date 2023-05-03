@@ -26,7 +26,7 @@ const Navbar = () => {
                         Marketplace
                     </NavLink>
                     <div className="nav-item mx-sm-3">
-                        <NavLink className="nav-link text-black" to="/cart">
+                        <NavLink className="nav-link text-black mx-3" to="/cart">
                             <i className="bi bi-cart" /> - Cart{" "}
                             <span className="badge bg-danger">
                                 {cart.length > 0 ? cart.length : ""}
