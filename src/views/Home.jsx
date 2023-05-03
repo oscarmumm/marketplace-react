@@ -30,7 +30,7 @@ const Home = () => {
     return (
         <div className="d-flex flex-column align-items-center">
             <CarouselHome />
-            <h2 className="my-5"> Today's deals!!</h2>
+            <h2 className="my-5 fw-bold"> Today's deals!!</h2>
             <ul className="container-fluid d-flex flex-wrap">
                 {loading ? <CircleLoader /> : offers.map((el) => (
                     <ProductCard

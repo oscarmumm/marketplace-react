@@ -1,9 +1,11 @@
 .product-page {
   background-color: #fff;
-  max-width: 900px;
+  /* max-width: 900px; */
   padding: 1rem;
 }
 
 .product-page img {
   max-width: 300px;
+  height: min-content;
+  margin: auto;
 }

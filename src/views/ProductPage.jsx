@@ -22,19 +22,20 @@ const ProductPage = (props) => {
             ) : (
                 <>
                     <h2>{data.title}</h2>
+                    <div className="py-2 d-flex overflow-auto">
+                        <img className="px-1" src={data.images[0]} alt="" />
+                        <img className="px-1" src={data.images[1]} alt="" />
+                        <img className="px-1" src={data.images[2]} alt="" />
+                        <img className="px-1" src={data.images[3]} alt="" />
+                        <img className="px-1" src={data.images[4]} alt="" />
+                    </div>
                     <h4>{data.brand}</h4>
-                    <h3>${data.price}</h3>
-                    <h4>{Math.round(data.discountPercentage)}% OFF</h4>
                     <p>{data.description}</p>
+                    <h3 className="text-decoration-line-through text-secondary">${Math.round(data.price / (1 - (data.discountPercentage / 100)))}</h3>
+                    <h4 className="text-success fw-bold">{Math.round(data.discountPercentage)}% OFF</h4>
+                    <h3>${data.price}</h3>
                     <p>{data.rating}⭐</p>
                     <button className="btn btn-primary" onClick={addToCart}>ADD TO CART</button>
-                    <div>
-                        <img src={data.images[0]} alt="" />
-                        <img src={data.images[1]} alt="" />
-                        <img src={data.images[2]} alt="" />
-                        <img src={data.images[3]} alt="" />
-                        <img src={data.images[4]} alt="" />
-                    </div>
                     {/* brand
                     category
                     description
