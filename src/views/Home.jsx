@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import CarouselHome from "../components/CarouselHome";
 import ProductCard from "../components/ProductCard";
 import CircleLoader from "../components/CircleLoader";
+import Banner from "../components/Banner";
 
 const Home = () => {
     const [offers, setOffers] = useState([]);
@@ -29,7 +30,7 @@ const Home = () => {
 
     return (
         <div className="d-flex flex-column align-items-center">
-            <CarouselHome />
+            <Banner />
             <h2 className="my-5 fw-bold"> Today's deals!!</h2>
             <ul className="container-fluid d-flex flex-wrap">
                 {loading ? <CircleLoader /> : offers.map((el) => (

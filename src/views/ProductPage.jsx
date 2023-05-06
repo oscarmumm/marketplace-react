@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import CircleLoader from "../components/CircleLoader";
@@ -12,10 +12,23 @@ const ProductPage = (props) => {
     const params = useParams();
     const { data } = useFetch(`https://dummyjson.com/products/${params.id}`);
     const { cart, setCart } = useContext(CartContext);
+    const [quantity, setQuantity] = useState(1)
+
+    const incrementQantity = () => {
+        setQuantity(quantity +1);
+        console.log(quantity)
+    }
+    
+    const decrementQantity = () => {
+        quantity >= 2 ? setQuantity(quantity -1) : setQuantity(1)
+        console.log(quantity)
+    }
 
     const addToCart = () => {
+        data.quantity = quantity;
+        data.totalPrice = quantity * data.price;
         setCart([...cart, data]);
-        toast("Product added to cart!")
+        toast.success("Product added to cart!")
     };
 
     return (
@@ -44,6 +57,11 @@ const ProductPage = (props) => {
                     </h4>
                     <h3>${data.price}</h3>
                     <p>{data.rating}⭐</p>
+                    <div className="py-3">
+                        <button className="btn btn-secondary text-white fw-bold fs-4 px-3" onClick={incrementQantity}>+</button>
+                        <span className="btn btn-outline-secondary mx-2 fs-4">{quantity}</span>
+                        <button className="btn btn-secondary text-white fw-bold fs-4 px-3" onClick={decrementQantity}>-</button>
+                    </div>
                     <button className="btn btn-primary" onClick={addToCart}>
                         ADD TO CART
                     </button>

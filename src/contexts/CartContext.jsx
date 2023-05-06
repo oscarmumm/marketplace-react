@@ -4,8 +4,8 @@ export const CartContext = createContext([]);
 
 export function CartContextProvider(props) {
     const [cart, setCart] = useState([]);
-    console.log(cart)
     const value = { cart, setCart };
+    console.log(cart)
 
     return (
         <CartContext.Provider value={value}>
