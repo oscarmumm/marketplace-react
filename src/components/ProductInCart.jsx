@@ -30,7 +30,7 @@ const ProductInCart = (props) => {
                 <button
                     className="delete-icon-btn btn btn-danger"
                     onClick={deleteItem}>
-                    <i className="bi bi-trash3 fw-bold"></i>
+                    <i className="bi bi-trash3 fw-bold"></i> Delete product
                 </button>
             </div>
         </div>

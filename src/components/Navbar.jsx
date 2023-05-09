@@ -11,6 +11,9 @@ const Navbar = () => {
         setSearchValue(e.target.value);
     }
 
+    function handleClick () {
+        console.log(searchValue)
+    }
     return (
         <nav
             className="navbar navbar-expand-xl"
@@ -27,7 +30,7 @@ const Navbar = () => {
                     </NavLink>
                     <div className="nav-item mx-sm-3">
                         <NavLink className="nav-link text-black mx-3" to="/cart">
-                            <i className="bi bi-cart" /> - Cart{" "}
+                            <i className="bi bi-cart" /> | Cart{" "}
                             <span className="badge bg-danger">
                                 {cart.length > 0 ? cart.length : ""}
                             </span>
@@ -56,7 +59,7 @@ const Navbar = () => {
                                 aria-current="page"
                                 to="/"
                             >
-                                <i className="bi bi-house" /> - Home
+                                <i className="bi bi-house" /> | Home
                             </NavLink>
                         </li>
                         <li className="nav-item mx-sm-3">
@@ -64,7 +67,7 @@ const Navbar = () => {
                                 className="nav-link text-black"
                                 to="/login"
                             >
-                                <i className="bi bi-box-arrow-in-right" /> -
+                                <i className="bi bi-box-arrow-in-right" /> |
                                 Login / Sign Up
                             </NavLink>
                         </li>
@@ -73,7 +76,7 @@ const Navbar = () => {
                                 className="nav-link text-black"
                                 to="/categories"
                             >
-                                <i className="bi bi-card-list" /> - Categories
+                                <i className="bi bi-card-list" /> | Categories
                             </NavLink>
                         </li>
                     </ul>
@@ -87,7 +90,9 @@ const Navbar = () => {
                         />
                         <NavLink
                             to={`/search/${searchValue}`}
+                            onClick={handleClick}
                             className="btn btn-primary"
+                            reloadDocument
                         >
                             Search
                         </NavLink>
