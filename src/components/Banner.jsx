@@ -1,6 +1,6 @@
 import React from 'react'
 import BannerImg from '../assets/img/banners/cyber-monday-banner.webp'
-import '../styles/banner.css'
+import '../styles/Banner.css'
 
 const Banner = () => {
   return (
