@@ -7,13 +7,8 @@ const ProductInCart = (props) => {
     const {cart, setCart} = useContext(CartContext);
 
     const deleteItem = () => {
-        console.log('delete item')
-        console.log('id del producto',props.id)
-        //console.log(cart.find((el) => el.id === props.id))
-        console.log('carrito' ,cart)
-        console.log('props' ,props)
-        console.log('indice', cart.findIndex((el) => el.id === props.id))
-        // a partir del indice eliminar el elemento <-- <-- <-- <--
+        const temp = cart.filter(el => el.id !== props.id)
+        setCart(temp)
     }
 
 
