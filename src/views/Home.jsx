@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import CarouselHome from "../components/CarouselHome";
 import ProductCard from "../components/ProductCard";
 import CircleLoader from "../components/CircleLoader";
 import Banner from "../components/Banner";
