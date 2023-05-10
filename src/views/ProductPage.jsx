@@ -32,11 +32,11 @@ const ProductPage = (props) => {
     };
 
     return (
-        <div className="product-page">
+        <div className="container product-page">
             {!data ? (
                 <CircleLoader />
             ) : (
-                <p>
+                <div>
                     <h2>{data.title}</h2>
                     <p className="fs-4">{data.rating}⭐</p>
                     <div className="py-2 d-flex overflow-auto">
@@ -82,7 +82,7 @@ const ProductPage = (props) => {
                         </div>
                     </div>
                     <ToastContainer />
-                </p>
+                </div>
             )}
         </div>
     );
