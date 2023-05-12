@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 const ProductCard = (props) => {
 
   return (
-    <NavLink to={`/product/${props.id}`} className='product-card my-2 mx-auto p-3 text-black'>
+    <NavLink to={`/product/${props.id}`} className='product-card my-2 mx-3 p-3 text-black'>
       <div className='product-card-uppersection'>
         <img className='product-card-img' src={props.thumbnail} alt="" />
       </div>

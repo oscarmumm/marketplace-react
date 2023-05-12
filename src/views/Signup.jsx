@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 
 const Signup = () => {
     return (
-        <div className="container-fluid login-card py-5 col-lg-2 col-sm-6 ">
+        <div className="container-fluid login-card col-lg-4 col-sm-6 ">
             <form className="mx-auto">
                 <legend className="text-center">Sign Up</legend>
                 <div className="mb-3">

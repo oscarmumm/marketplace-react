@@ -15,7 +15,7 @@ const Search = () => {
     return (
         <>
             {data?.products.length >= 1 ? (
-                <ul className="container-fluid d-flex flex-wrap">
+                <ul className="container-fluid d-flex flex-wrap align-items-center justify-content-center">
                     {data.products.map((el) => (
                         <ProductCard
                             key={el.id}

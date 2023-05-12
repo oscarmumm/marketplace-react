@@ -31,7 +31,7 @@ const Home = () => {
         <div className="d-flex flex-column align-items-center">
             <Banner />
             <h2 className="my-5 fw-bold"> Today's deals!!</h2>
-            <ul className="container-fluid d-flex flex-wrap">
+            <ul className="container-fluid d-flex flex-wrap align-items-center justify-content-center">
                 {loading ? <CircleLoader /> : offers.map((el) => (
                     <ProductCard
                         key={el.id}
